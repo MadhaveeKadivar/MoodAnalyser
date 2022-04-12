@@ -31,5 +31,17 @@ namespace MoodAnalyzerMSTesting
             //Assert
             Assert.AreEqual(exepected, actual);
         }
+        [TestMethod] // TC 2.1 If message is null then returns happy mood
+        public void GivenNULLMoodShouldReturnHappy()
+        {
+            //Arrange
+            string exepected = "HAPPY";
+            string message = null;
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer(message);
+            //Act
+            string actual = moodAnalyzer.AnalyzeMood();
+            //Assert
+            Assert.AreEqual(exepected, actual);
+        }
     }
 }
