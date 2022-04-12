@@ -10,11 +10,11 @@ namespace MoodAnalyzerProblem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("\nWelcome to Mood Analyzer");
-            MoodAnalyzer moodAnalyzer = new MoodAnalyzer(); //Creating a object of MooddAnalyzer class
+            Console.WriteLine("\nWelcome to Mood Analyzer");           
             Console.WriteLine("\nEnter any message : ");
             string message = Console.ReadLine();
-            string mood = moodAnalyzer.AnalyzeMood(message); // calling method of class with paasing user message as parameter
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer(message); //Creating a object of MooddAnalyzer class
+            string mood = moodAnalyzer.AnalyzeMood(); // calling method of class with paasing user message as parameter
             Console.WriteLine($"\n{mood} mood");
             Console.ReadLine();
         }
