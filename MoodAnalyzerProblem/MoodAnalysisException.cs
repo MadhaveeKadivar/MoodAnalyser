@@ -15,7 +15,8 @@ namespace MoodAnalyzerProblem
             CLASS_NOT_FOUND,
             CONSTRUCTOR_NOT_FOUND,
             NOT_MATCH,
-            METHOD_NOT_FOUND
+            METHOD_NOT_FOUND,
+            FIELD_NOT_FOUND
         }
         public ExceptionType type; // Creating enum name type variable
         public MoodAnalysisException(ExceptionType type, string message):base(message) // Creating a constructor with parent class
