@@ -8,11 +8,16 @@ namespace MoodAnalyzerProblem
 {
     public class MoodAnalysisException : Exception // Inherit parent exception class
     {
-        public enum ExceptionType // Creating a enum with two variable
+        public enum ExceptionType // Creating a enum with variable
         {
-            NULL_MESSAGE,EMPTY_MESSAGE
+            NULL_MESSAGE,
+            EMPTY_MESSAGE,
+            CLASS_NOT_FOUND,
+            CONSTRUCTOR_NOT_FOUND,
+            NOT_MATCH
+
         }
-        public ExceptionType type; // Creatinf enum name type variable
+        public ExceptionType type; // Creating enum name type variable
         public MoodAnalysisException(ExceptionType type, string message):base(message) // Creating a constructor with parent class
         {
             this.type = type;// Assigning value
