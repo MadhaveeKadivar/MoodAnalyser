@@ -24,28 +24,6 @@ namespace MoodAnalyzerProblem
             {
                 throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.METHOD_NOT_FOUND, "Method not found");
             }
-        } 
-        public string SetField(string userMessage,string fieldName)
-        { 
-            MoodAnalyzerFactory factory = new MoodAnalyzerFactory(); //Creating a object of MoodAnalyzerFactory class
-            MoodAnalyzer obj = (MoodAnalyzer)factory.CreateMoodAnalyzerObject("MoodAnalyzerProblem.MoodAnalyzer", "MoodAnalyzer"); //Creating a object of Moodanalyzer class using reflection
-            Type type = typeof(MoodAnalyzer); // Getting type of mood analyzer class
-            FieldInfo field = type.GetField(fieldName, BindingFlags.Public | BindingFlags.Instance); // Getting field name using reflection
-            if (field != null)
-            {
-                if(userMessage == null) //If message passed by user is null then throw exception
-                {
-                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NULL_MESSAGE, "Message should not be null");
-                }
-                field.SetValue(obj, userMessage); // Setting usermessage to Local varible "message" of mood analyzer class
-                string result = InvokeMethod(obj.message,"AnalyzeMood"); //Invoking a method to get the user's mood based on message
-                return result;
-            }
-            else //If field not found then throw exception
-            {
-                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.FIELD_NOT_FOUND, "Field name not found");
-            }
-
-        }
+        }         
     }
 }
