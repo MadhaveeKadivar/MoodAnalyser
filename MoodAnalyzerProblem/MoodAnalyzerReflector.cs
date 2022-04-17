@@ -33,7 +33,7 @@ namespace MoodAnalyzerProblem
             FieldInfo field = type.GetField(fieldName, BindingFlags.Public | BindingFlags.Instance); // Getting field name using reflection
             if (field != null)
             {
-                if(userMessage == null) //If message passed by user is null then throe exception
+                if(userMessage == null) //If message passed by user is null then throw exception
                 {
                     throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NULL_MESSAGE, "Message should not be null");
                 }
